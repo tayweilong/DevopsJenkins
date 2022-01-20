@@ -1,5 +1,3 @@
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
-
 public class User {
 	
 	protected String name;
