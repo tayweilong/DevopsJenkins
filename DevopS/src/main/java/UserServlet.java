@@ -40,13 +40,44 @@ public class UserServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    // Connection class for database
+    protected Connection getConnection() {
+    	Connection connection = null;
+    	try {
+    	Class.forName("com.mysql.jdbc.Driver");
+    	connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+    	} catch (SQLException e) {
+    	e.printStackTrace();
+    	} catch (ClassNotFoundException e) {
+    	e.printStackTrace();
+    	}
+    	return connection;
+    	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//Depending on the request servlet path, determine the function to invoke using the follow switch statement.
+		String action = request.getServletPath();
+		try {
+			switch (action) {
+				case "/insert":
+					break;
+				case "/delete":
+					break;
+				case "/edit":
+					break;
+				case "/update":
+					break;
+				default:
+					listUsers(request, response);
+					break;
+		}
+		} catch (SQLException ex) {
+			throw new ServletException(ex);	
+		}
 	}
 
 	/**
