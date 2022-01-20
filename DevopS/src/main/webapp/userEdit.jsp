@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Edit User Page</title>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>User Management Application</title>
@@ -15,7 +15,7 @@
 
 <nav class="navbar navbar-expand-md navbar-light">
     <div>
-        <a class="navbar-brand"> User Management Application </a>
+        <a class="navbar-brand"> User Management Applications </a>
     </div>
     <ul class="navbar-nav">
         <li><a href="<%=request.getContextPath()%>/UserServlet/dashboard" class="nav-link">Back to Dashboard</a></li>
