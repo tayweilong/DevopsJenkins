@@ -91,7 +91,7 @@ public class UserServlet extends HttpServlet {
 	 int i = statement.executeUpdate();
 	 }
 	 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url toyour project name)
-	 response.sendRedirect("http://localhost:8090/DevopS/UserServlet/dashboard");
+	 response.sendRedirect("/DevopS/UserServlet/dashboard");
 	}
 
 	/**
@@ -153,10 +153,7 @@ public class UserServlet extends HttpServlet {
 				request.getRequestDispatcher("/userEdit.jsp").forward(request, response);
 			}
 
-	private void deleteUser(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
