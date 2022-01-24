@@ -1,4 +1,5 @@
 # DevopS
+
 This project is a creation of user management system using Eclipse IDE dynamic web project with tomcat server to do all the CRUD requests
 
 # Prerequisite
@@ -60,4 +61,3 @@ We have created some branches to update our progress into the project. This help
 - @jyorien created the user management system display with retrieve user functionality 
 - @wenhuibbb added the delete user functionality for the system
 - @hhafzahh added the register user form with add user functionality 
-
