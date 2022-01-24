@@ -79,6 +79,20 @@ public class UserServlet extends HttpServlet {
 			request.setAttribute("listUsers", users);
 			request.getRequestDispatcher("/userManagement.jsp").forward(request, response);
 			}
+	//method to delete user
+	private void deleteUser(HttpServletRequest request, HttpServletResponse response)
+	throws SQLException, IOException {
+	//Step 1: Retrieve value from the request
+	 String name = request.getParameter("name");
+	 //Step 2: Attempt connection with database and execute delete user SQL query
+	 try (Connection connection = getConnection(); PreparedStatement statement =
+	connection.prepareStatement(DELETE_USERS_SQL);) {
+	 statement.setString(1, name);
+	 int i = statement.executeUpdate();
+	 }
+	 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url toyour project name)
+	 response.sendRedirect("http://localhost:8090/DevopS/UserServlet/dashboard");
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -90,7 +104,8 @@ public class UserServlet extends HttpServlet {
 			switch (action) {
 				case "/insert":
 					break;
-				case "/delete":
+				case "/UserServlet/delete":
+					 deleteUser(request, response);
 					break;
 				case "/edit":
 					break;
