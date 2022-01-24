@@ -50,7 +50,7 @@ public class RegisterServlet extends HttpServlet {
 		 //attempt connection to database using JDBC
 		 Class.forName("com.mysql.jdbc.Driver");
 		 Connection con = DriverManager.getConnection(
-		 "jdbc:mysql://localhost:3306/userdetails", "root", "password");
+		 "jdbc:mysql://localhost:3306/userdetails", "root", "");
 		 //SQL query
 		 PreparedStatement ps = con.prepareStatement("insert into USERDETAILS values(?,?,?,?)");
 		 //parse in the data retrieved from the web form request into the ps
@@ -65,7 +65,7 @@ public class RegisterServlet extends HttpServlet {
 			//check if the query had been successfully executed..return successful response
 			PrintWriter writer = response.getWriter();
 			writer.println("<h1>" + "You have successfully registered an account!" +
-			"</h1>");
+			"</h1>" + "<a href=/DevopS/UserServlet/dashboard>" + "Back to Dashboard" + "</a>");
 			writer.close();
 			}
 		}
