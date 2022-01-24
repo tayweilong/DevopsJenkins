@@ -126,7 +126,7 @@ public class UserServlet extends HttpServlet {
 	int i = statement.executeUpdate();
 	}
 	//Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
-	response.sendRedirect("http://localhost/DevopS/UserServlet");
+	response.sendRedirect("/DevopS/UserServlet/dashboard");
 	}
 	
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
