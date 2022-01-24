@@ -107,7 +107,7 @@ public class UserServlet extends HttpServlet {
 		}
 	}
 
-	//method to update the user table base on the form data
+	//method to update the user table base on the form data.
 	private void updateUser(HttpServletRequest request, HttpServletResponse response)
 	throws SQLException, IOException {
 	//Step 1: Retrieve value from the request
