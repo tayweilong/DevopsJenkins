@@ -5,7 +5,8 @@ pipeline {
   stages {
     stage("build") {
       steps {
-        echo 'building the app part 2'
+       sh "mvn -version"
+       sh "mvn clean install"
       }
     }
     stage("test") {
@@ -17,6 +18,13 @@ pipeline {
       steps {
         echo 'deploying the app'
       }
+    }
+  }
+  post {
+    always {
+      // always start with a clean workspace
+      cleanWs()
+    
     }
   }
 }
